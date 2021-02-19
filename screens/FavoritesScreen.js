@@ -10,7 +10,7 @@ import DefaultText from "../components/DefaultText";
 const FavoritesScreen = (props) => {
   const favMeals = useSelector((state) => state.meals.favoriteMeals);
 
-  if (favMeals.length > 0 || !favMeals) {
+  if (favMeals.length === 0 || !favMeals) {
     return (
       <View style={styles.content}>
         <DefaultText>No favorite meals found!</DefaultText>
