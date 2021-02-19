@@ -26,9 +26,9 @@ const MealItem = (props) => {
             </ImageBackground>
           </View>
           <View style={{ ...styles.mealRow, ...styles.mealDetail }}>
-            <DefaultText>{props.duration}m</DefaultText>
-            <DefaultText>{props.complexity.toUpperCase()}</DefaultText>
-            <DefaultText>{props.affordability.toUpperCase()}</DefaultText>
+            <DefaultText>- {props.duration}m</DefaultText>
+            <DefaultText>- {props.complexity.toUpperCase()}</DefaultText>
+            <DefaultText>- {props.affordability.toUpperCase()}</DefaultText>
           </View>
         </View>
       </TouchableOpacity>

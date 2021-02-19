@@ -11,7 +11,7 @@ const FilterSwitch = (props) => {
     <View style={styles.filterContainer}>
       <Text>{props.label}</Text>
       <Switch
-        track={{ true: Colors.primaryColor }}
+        trackColor={{ true: Colors.primaryColor }}
         thumbColor={Platform.OS === "android" ? Colors.primaryColor : ""}
         value={props.state}
         onValueChange={props.onChange}
@@ -22,6 +22,7 @@ const FilterSwitch = (props) => {
 
 const FiltersScreen = (props) => {
   const { navigation } = props;
+
   const [isGlutenFree, setIsGlutenFree] = useState(false);
   const [isLactoseFree, setIsLactoseFree] = useState(false);
   const [isVegan, setIsVegan] = useState(false);
@@ -34,7 +35,7 @@ const FiltersScreen = (props) => {
       glutenFree: isGlutenFree,
       lactoseFree: isLactoseFree,
       vegan: isVegan,
-      isVegetarian: isVegetarian,
+      vegetarian: isVegetarian,
     };
 
     dispatch(setFilters(appliedFilters));
@@ -42,7 +43,7 @@ const FiltersScreen = (props) => {
 
   useEffect(() => {
     navigation.setParams({ save: saveFilters });
-  }, [saveFilters, navigation]);
+  }, [saveFilters]);
 
   return (
     <View style={styles.screen}>
@@ -52,19 +53,16 @@ const FiltersScreen = (props) => {
         state={isGlutenFree}
         onChange={(newValue) => setIsGlutenFree(newValue)}
       />
-      <Text style={styles.title}>Available Filters / Restrictions</Text>
       <FilterSwitch
         label="Lactose-free"
         state={isLactoseFree}
         onChange={(newValue) => setIsLactoseFree(newValue)}
       />
-      <Text style={styles.title}>Available Filters / Restrictions</Text>
       <FilterSwitch
         label="Vegan"
         state={isVegan}
         onChange={(newValue) => setIsVegan(newValue)}
       />
-      <Text style={styles.title}>Available Filters / Restrictions</Text>
       <FilterSwitch
         label="Vegetarian"
         state={isVegetarian}
@@ -77,7 +75,7 @@ const FiltersScreen = (props) => {
 FiltersScreen.navigationOptions = (navData) => {
   return {
     headerTitle: "Filter Meals",
-    headerLeft: () => (
+    headerLeft: (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
           title="Menu"
@@ -99,6 +97,7 @@ FiltersScreen.navigationOptions = (navData) => {
     ),
   };
 };
+
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
@@ -106,8 +105,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "open-sans-bold",
-    margin: 20,
     fontSize: 22,
+    margin: 20,
     textAlign: "center",
   },
   filterContainer: {
@@ -115,7 +114,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     width: "80%",
-    marginVertical: 10,
+    marginVertical: 15,
   },
 });
 

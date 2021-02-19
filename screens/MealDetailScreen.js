@@ -42,9 +42,9 @@ const MealDetailScreen = (props) => {
     <ScrollView>
       <Image source={{ uri: selectedMeal.imageUrl }} style={styles.image} />
       <View style={styles.details}>
-        <DefaultText>{selectedMeal.duration}m</DefaultText>
-        <DefaultText>{selectedMeal.complexity.toUpperCase()}</DefaultText>
-        <DefaultText>{selectedMeal.affordability.toUpperCase()}</DefaultText>
+        <DefaultText>- {selectedMeal.duration}m</DefaultText>
+        <DefaultText>- {selectedMeal.complexity.toUpperCase()}</DefaultText>
+        <DefaultText>- {selectedMeal.affordability.toUpperCase()}</DefaultText>
       </View>
       <Text style={styles.title}>Ingredients</Text>
       {selectedMeal.ingredients.map((ingredient) => (
