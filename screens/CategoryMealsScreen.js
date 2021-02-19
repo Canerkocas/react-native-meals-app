@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import MealList from "../components/MealList";
 import DefaultText from "../components/DefaultText";
 import { View, StyleSheet } from "react-native";
-import DefaultText from "../components/DefaultText";
 
 const CategoryMealScreen = (props) => {
   const catId = props.navigation.getParam("categoryId");

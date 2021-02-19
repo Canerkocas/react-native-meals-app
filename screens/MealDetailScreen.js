@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
   listItem: {
     marginVertical: 10,
     marginHorizontal: 20,
-    borderColor: "ccc",
+    borderColor: "#ccc",
     borderWidth: 1,
     padding: 10,
   },
